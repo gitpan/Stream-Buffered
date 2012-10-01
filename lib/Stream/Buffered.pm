@@ -7,7 +7,7 @@ use Stream::Buffered::Auto;
 use Stream::Buffered::File;
 use Stream::Buffered::PerlIO;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 our $MaxMemoryBufferSize = 1024 * 1024;
 
@@ -34,7 +34,7 @@ sub new {
 
 sub create {
     my($class, $backend, $length, $max) = @_;
-    "${class}::${backend}"->new($length, $max);
+    (__PACKAGE__ . "::$backend")->new($length, $max);
 }
 
 sub print;

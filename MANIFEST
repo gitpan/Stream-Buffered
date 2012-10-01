@@ -20,3 +20,4 @@ MANIFEST			This list of files
 META.yml
 README
 t/print.t
+t/subclass.t
